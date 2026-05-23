@@ -6,7 +6,7 @@ Evaluation scripts and results are in `/cv_bench_evals`. Finetuning uses LoRA or
 
 ## Results
 
-| Model | Counting | Relative Position |
+| Model | Counting (%) | Relative Position (%) |
 |---|---|---|
 | PaliGemma2-3B | 60.66 | 76.00 |
 | InternVL2-2B | 63.4 | 66.8 |
