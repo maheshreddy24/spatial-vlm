@@ -14,7 +14,7 @@ Evaluation scripts and results are in `/cv_bench_evals`. Finetuning uses LoRA or
 | InternVL2-5-2B | 63.8 | 67.5 |
 | InternVL2-5-4B | 64.9 | 72.3 |
 | InternVL2-8B | 65.7 | 76.4 |
-| **PaliGemma2-3B (Ours)** | **72.0** | **86.0** |
+| **PaliGemma2-3B (Ours - 3D Finetuned Encoder)** | **72.0** | **86.0** |
 
 > **Note:** Additional results and analysis will be added soon.
 
