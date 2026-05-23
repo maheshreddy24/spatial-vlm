@@ -6,7 +6,6 @@ from PIL import Image
 import os
 from tqdm import tqdm
 from scipy.io import loadmat
-from icecream import ic
 
 
 class OxfordPetDataset(Dataset):

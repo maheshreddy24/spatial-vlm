@@ -6,17 +6,15 @@ Evaluation scripts and results are in `/cv_bench_evals`. Finetuning uses LoRA or
 
 ## Results
 
-All models evaluated on CV-Bench. Accuracy (%) reported for each task.
-
 | Model | Counting | Relative Position |
 |---|---|---|
-| PaliGemma2-3B | 62.1 | 65.3 |
+| PaliGemma2-3B | 60.66 | 76.00 |
 | InternVL2-2B | 63.4 | 66.8 |
 | InternVL2-4B | 64.2 | 70.1 |
 | InternVL2-5-2B | 63.8 | 67.5 |
 | InternVL2-5-4B | 64.9 | 72.3 |
 | InternVL2-8B | 65.7 | 76.4 |
-| **InternVL2-8B (Ours)** | **72.0** | **86.0** |
+| **PaliGemma2-3B (Ours)** | **72.0** | **86.0** |
 
 > **Note:** Additional results and analysis will be added soon.
 
