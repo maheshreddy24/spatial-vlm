@@ -1,0 +1,18 @@
+task,prompt,gt,pred,raw_response,correct,accuracy
+Count,"How many organs are in the image? Select from the following choices.
+(A) 3
+(B) 2
+(C) 1
+(D) 0",C,C,C,True,100.0
+Count,"How many cushions are in the image? Select from the following choices.
+(A) 4
+(B) 5
+(C) 8
+(D) 0
+(E) 6
+(F) 7",(E),E,E,False,50.0
+Count,"How many table lamps are in the image? Select from the following choices.
+(A) 0
+(B) 2
+(C) 1
+(D) 3",C,C,C,True,66.66666666666666
