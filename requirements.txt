@@ -1,0 +1,9 @@
+peft
+huggingface
+transformers
+torch
+torchvision
+numpy 
+pandas
+icecream
+datasets
