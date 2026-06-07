@@ -1,0 +1,112 @@
+gemma) system@system:/media/system/ZERBUIS_EXT_STOR/temp/exp/experiment/depth_tuning/fusion_models$ python3 base_hf_gemma_trainer.py 
+Failed to load /home/system/miniconda3/envs/gemma/lib/python3.10/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so: Could not load this library: /home/system/miniconda3/envs/gemma/lib/python3.10/site-packages/torchao/_C_mxfp8.cpython-310-x86_64-linux-gnu.so
+Failed to load /home/system/miniconda3/envs/gemma/lib/python3.10/site-packages/torchao/_C_cutlass_90a.abi3.so: Could not load this library: /home/system/miniconda3/envs/gemma/lib/python3.10/site-packages/torchao/_C_cutlass_90a.abi3.so
+============================================================
+Option A — Vision: FROZEN  | LM: LoRA       | Connector: full
+Model reinitialization!
+`torch_dtype` is deprecated! Use `dtype` instead!
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 64.50it/s]
+[UNFREEZING] base_model.model.model.multi_modal_projector.linear.weight
+[UNFREEZING] base_model.model.model.multi_modal_projector.linear.bias
+trainable params: 15,436,032 || all params: 3,045,021,936 || trainable%: 0.5069
+wandb: [wandb.login()] Loaded credentials for https://api.wandb.ai from /home/system/.netrc.
+wandb: W&B API key is configured. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.27.0
+wandb: Run data is saved locally in /media/system/ZERBUIS_EXT_STOR/temp/exp/experiment/depth_tuning/fusion_models/wandb/run-20260605_172332-75mmnpgr
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run gemma_hf_finetuning_OptionA
+wandb: ⭐️ View project at https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d
+wandb: 🚀 View run at https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d/runs/75mmnpgr
+Unfreezed vision encoder params
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 137907/137907 [3:48:55<00:00, 10.04it/s]
+Epoch [1/1]  Train Loss: 0.0638  Val Loss:   0.0000
+wandb: 
+wandb: Run history:
+wandb:           epoch ▁
+wandb:            step ▁▁▁▁▁▂▂▂▃▃▃▃▄▄▄▄▄▄▄▅▅▅▅▅▆▆▆▆▆▆▇▇▇▇▇▇▇███
+wandb:      train_loss ▁
+wandb: train_loss_step █▄▄▄▃▂▂▂▂▂▂▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:           epoch 1
+wandb:            step 137906
+wandb:      train_loss 0.06381
+wandb: train_loss_step 0.06381
+wandb:        val_loss 0.0
+wandb: 
+wandb: 🚀 View run gemma_hf_finetuning_OptionA at: https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d/runs/75mmnpgr
+wandb: ⭐️ View project at: https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260605_172332-75mmnpgr/logs
+============================================================
+Option B — Vision: LoRA    | LM: LoRA       | Connector: full
+Model reinitialization!
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 65.44it/s]
+[UNFREEZING] base_model.model.model.multi_modal_projector.linear.weight
+[UNFREEZING] base_model.model.model.multi_modal_projector.linear.bias
+trainable params: 21,408,000 || all params: 3,050,993,904 || trainable%: 0.7017
+wandb: Currently logged in as: maheshreddy-t (maheshreddy-tapeti) to https://api.wandb.ai. Use `wandb login --relogin` to force relogin
+wandb: Tracking run with wandb version 0.27.0
+wandb: Run data is saved locally in /media/system/ZERBUIS_EXT_STOR/temp/exp/experiment/depth_tuning/fusion_models/wandb/run-20260605_214045-q828kxl9
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run gemma_hf_finetuning_OptionB
+wandb: ⭐️ View project at https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d
+wandb: 🚀 View run at https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d/runs/q828kxl9
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 137907/137907 [4:22:36<00:00,  8.75it/s]
+Epoch [1/1]  Train Loss: 0.0564  Val Loss:   0.0000
+wandb: 
+wandb: Run history:
+wandb:           epoch ▁
+wandb:            step ▁▁▁▁▂▂▂▂▂▂▂▃▃▃▃▃▃▃▄▄▄▄▄▄▅▅▅▅▅▅▆▆▇▇▇█████
+wandb:      train_loss ▁
+wandb: train_loss_step █▇▂▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁▁
+wandb:        val_loss ▁
+wandb: 
+wandb: Run summary:
+wandb:           epoch 1
+wandb:            step 137906
+wandb:      train_loss 0.05641
+wandb: train_loss_step 0.05641
+wandb:        val_loss 0.0
+wandb: 
+wandb: 🚀 View run gemma_hf_finetuning_OptionB at: https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d/runs/q828kxl9
+wandb: ⭐️ View project at: https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d
+wandb: Synced 5 W&B file(s), 0 media file(s), 0 artifact file(s) and 0 other file(s)
+wandb: Find logs at: ./wandb/run-20260605_214045-q828kxl9/logs
+============================================================
+Option C — Vision: LoRA (low lr) | LM: LoRA | Connector: full
+Model reinitialization!
+Loading checkpoint shards: 100%|█████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 2/2 [00:00<00:00, 62.81it/s]
+[UNFREEZING] base_model.model.model.multi_modal_projector.linear.weight
+[UNFREEZING] base_model.model.model.multi_modal_projector.linear.bias
+trainable params: 21,408,000 || all params: 3,050,993,904 || trainable%: 0.7017
+wandb: Tracking run with wandb version 0.27.0
+wandb: Run data is saved locally in /media/system/ZERBUIS_EXT_STOR/temp/exp/experiment/depth_tuning/fusion_models/wandb/run-20260606_023247-7rdxnvdu
+wandb: Run `wandb offline` to turn off syncing.
+wandb: Syncing run gemma_hf_finetuning_OptionC
+wandb: ⭐️ View project at https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d
+wandb: 🚀 View run at https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d/runs/7rdxnvdu
+100%|████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████████| 137907/137907 [4:22:52<00:00,  8.74it/s]
+CUDA error: CUBLAS_STATUS_EXECUTION_FAILED when calling `cublasGemmEx( handle, opa, opb, m, n, k, &falpha, a, CUDA_R_16BF, lda, b, CUDA_R_16BF, ldb, &fbeta, c, std::is_same_v<C_Dtype, float> ? CUDA_R_32F : CUDA_R_16BF, ldc, compute_type, CUBLAS_GEMM_DEFAULT_TENSOR_OP)`
+wandb: 
+wandb: 🚀 View run gemma_hf_finetuning_OptionC at: https://wandb.ai/maheshreddy-tapeti/gemma_finetuning_fit3d/runs/7rdxnvdu
+wandb: Find logs at: wandb/run-20260606_023247-7rdxnvdu/logs
+(gemma) system@system:/media/system/ZERBUIS_EXT_STOR/temp/exp/experiment/depth_tuning/fusion_models$ 
+
+
+############################ full finetuning: 4ms
+Per-task Accuracy:
+Count: 38.07% (300/788)
+Relation: 71.69% (466/650)
+
+
+
+#@### mp fometimgomg
+==============================
+Final Overall Accuracy: 67.59%
+==============================
+
+Per-task Accuracy:
+Count: 60.66% (478/788)
+Relation: 76.00% (494/650)
