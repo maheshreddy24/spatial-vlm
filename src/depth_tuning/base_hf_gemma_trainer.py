@@ -1,3 +1,5 @@
+# import os
+# os.environ["CUDA_LAUNCH_BLOCKING"] = "1"
 import torch
 import torch.nn as nn
 from peft import LoraConfig, get_peft_model
@@ -11,6 +13,7 @@ from transformers import get_cosine_schedule_with_warmup
 from tqdm.autonotebook import tqdm
 import warnings
 import wandb
+import random
 
 """
 Option A (baseline): Freeze vision encoder, LoRA on LM,         full-finetune connector
@@ -23,7 +26,6 @@ class GemmaHF():
     def __init__(self):
         MODEL_NAME = "google/paligemma2-3b-mix-224"
 
-        # [FIX] define device early — used in _init_model and _fit
         self.device = "cuda" if torch.cuda.is_available() else "cpu"
 
         self.processor = AutoProcessor.from_pretrained(
@@ -196,10 +198,11 @@ class GemmaHF():
             image = image.resize((384, 384))
 
             question = ex["question"].strip()
-            options  = ex["answers"]                         # e.g. ['3', '0', '6', '4', '5']
+            options  = list(ex["answers"])   # copy so we don't mutate the original/cached list
+            random.shuffle(options)          # FIX: randomize order so answer isn't always index 0 -> 'A'
 
-            # correct_answer is the raw value → find its index → convert to letter
-            answer_idx = options.index(ex["correct_answer"]) # e.g. '3' is at index 0 → 'A'
+            # correct_answer is the raw value → find its (post-shuffle) index → convert to letter
+            answer_idx = options.index(ex["correct_answer"])
             answer     = chr(65 + answer_idx)                # 'A', 'B', 'C', ...
 
             options_text = "\n".join([f"{chr(65+i)}. {opt}" for i, opt in enumerate(options)])
@@ -226,7 +229,7 @@ class GemmaHF():
 
         for i in range(len(texts)):
             full_len   = (batch_input["attention_mask"][i] == 1).sum().item()
-            
+
             # Detect if processor added a trailing \n after EOS
             newline_id  = self.processor.tokenizer.encode("\n", add_special_tokens=False)[-1]  # 108
             last_tok    = batch_input["input_ids"][i][full_len - 1].item()

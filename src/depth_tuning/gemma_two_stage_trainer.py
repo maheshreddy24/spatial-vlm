@@ -273,6 +273,27 @@ class Gemma():
         self.logger.info(f"[{stage}] Done. Best eval loss: {self.best_eval_loss:.4f}")
         wandb.finish()
 
+    # def train(self):
+    #     # ── Stage 1: connector only ───────────────────────────────────────────
+    #     self.logger.info("=" * 40)
+    #     self.logger.info("STAGE 1 — connector alignment")
+    #     self.logger.info("=" * 40)
+    #     self._build_optimizer(stage="stage1", lr=2e-3) # we use a high learning rate to allign the model properly
+    #     self._fit(stage="stage1", epochs=1)
+
+    #     # # load best connector weights from stage 1 #!! why do we even neeed this, we are trainingonly for one epoch so just continue with the same
+    #     # best_stage1 = os.path.join(self.SAVE_DIR, "stage1", "best")
+    #     # self.logger.info(f"Loading best stage1 checkpoint from {best_stage1}")
+    #     # self.model_base.load_adapter(best_stage1)
+
+    #     # ── Stage 2: connector + LoRA ─────────────────────────────────────────
+    #     self.logger.info("=" * 40)
+    #     self.logger.info("STAGE 2 — LoRA + connector fine-tuning")
+    #     self.logger.info("=" * 40)
+    #     self._apply_lora()
+    #     self._build_optimizer(stage="stage2", lr = 2e-5) # low learnign rate for better allignment
+    #     self._fit(stage="stage2", epochs=self.NUM_EPOCHS)
+
     def train(self):
         self.logger.info("=" * 40)
         self.logger.info("STAGE 1 — connector alignment")
